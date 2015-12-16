@@ -5,3 +5,14 @@
 <p>
   <%= @question.description %>
 </p>
+
+<h4>Answers:</h4>
+
+<% unless @answers.nil? %>
+<ul>  <% @answers.each do |answer| %>
+  <li> <%= answer.description %> </li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= render 'answers/form' %>
