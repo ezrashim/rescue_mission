@@ -1,7 +1,5 @@
 <h1>Questions</h1>
 
-<h4> <%= flash[:notice] %> </h4>
-
 <ul> <% @questions.each do |question| %>
   <li> <%= link_to question.title, question %>"  created by <%= question.creator_id %> ( <%= question.updated_at %> ) </li>
   <% end %>
