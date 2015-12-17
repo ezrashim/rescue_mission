@@ -7,7 +7,7 @@ feature 'edit a question' do
   end
 
   scenario 'question gets editted when the form has valid information' do
-    click_link 'edit'
+    click_button 'edit'
     fill_in "Title", with: "I am editting this question. Watch out!!!"
     fill_in "Description", with: "Now this edit is going to take awhile. Who the heck requires 150 characters to describe a freaking question? Now, let's be real. What if you want to simply ask How are you? That would not extend to 150 characters. Let's real......"
     click_button 'Submit'
@@ -19,7 +19,7 @@ feature 'edit a question' do
   end
 
   scenario 'raises an error when the form has invalid information' do
-    click_link 'edit'
+    click_button 'edit'
     fill_in "Title", with: "This will not go through."
     fill_in "Description", with: "..."
     click_button('Submit')

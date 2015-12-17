@@ -6,7 +6,8 @@
   <%= @question.description %>
 </p>
 
-<%= link_to 'edit', edit_question_path(@question) %>
+<%= button_to 'edit', edit_question_path(@question), :method => :get %>
+<%= button_to 'delete', question_path(@question), :method => :delete %>
 
 <h4>Answers:</h4>
 

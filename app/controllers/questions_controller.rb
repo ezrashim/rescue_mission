@@ -34,11 +34,16 @@ class QuestionsController < ApplicationController
       flash.now[:notice] = "Invalid input."
       render 'edit'
     end
-
   end
 
   def edit
     @question = Question.find(params[:id])
+  end
+
+  def destroy
+    Question.find(params[:id]).destroy
+    flash[:notice] = "You have successfully deleted your question!"
+    redirect_to questions_path
   end
 
   private
