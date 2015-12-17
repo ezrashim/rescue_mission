@@ -1,22 +1,4 @@
 <h1>New Question</h1>
 <h4> <%= flash[:notice] %> </h4>
 
-<%= form_for(@question) do |f| %>
-
-<div>
-  <%= f.label :title, "Title" %></br>
-  <%= f.text_field :title %>
-</div>
-
-<div>
-  </br>
-  <%= f.label :description, "Description" %></br>
-  <%= f.text_field :description %>
-</div>
-
-<div>
-  </br>
-  <%= f.submit "Submit"%>
-</div>
-
-<% end %>
+<%= render 'question' %>

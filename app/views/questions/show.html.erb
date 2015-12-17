@@ -1,10 +1,12 @@
 <h1> <%= @question.title %> </h1>
-<h5> <%= @question.created_at %> </h5>
-<h5> <%= @question.updated_at %> </h5>
+<h5> created at: <%= @question.created_at %> </h5>
+<h5> updated at: <%= @question.updated_at %> </h5>
 
 <p>
   <%= @question.description %>
 </p>
+
+<%= link_to 'edit', edit_question_path(@question) %>
 
 <h4>Answers:</h4>
 

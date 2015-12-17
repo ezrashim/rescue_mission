@@ -24,7 +24,25 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def update
+    @question = Question.find(params[:id])
+    @question.update(question_params)
+    if @question.save
+      flash[:notice] = "You have successfully updated your question!"
+      redirect_to @question
+    else
+      flash.now[:notice] = "Invalid input."
+      render 'edit'
+    end
+
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
   private
+
   def question_params
     params.require(:question).permit(:title, :description, :creator_id)
   end
